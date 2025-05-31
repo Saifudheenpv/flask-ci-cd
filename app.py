@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, url_for
 import logging
 from datetime import datetime
 
@@ -11,7 +11,11 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-app = Flask(__name__)
+app = Flask(__name__, 
+    static_url_path='',
+    static_folder='static',
+    template_folder='templates'
+)
 
 
 @app.route('/')

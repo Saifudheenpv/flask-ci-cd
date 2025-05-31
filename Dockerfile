@@ -1,20 +1,20 @@
-# Use the official Python 3.8 slim image as the base
+# Use Python 3.8 as base image
 FROM python:3.8-slim
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Copy the requirements file
+# Copy requirements first to leverage Docker cache
 COPY requirements.txt .
 
 # Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the application code
-COPY app.py .
+# Copy the rest of the application
+COPY . .
 
-# Expose port 5000 for the Flask app
-EXPOSE 5000
+# Expose port 5001
+EXPOSE 5001
 
-# Command to run the Flask app
+# Command to run the application
 CMD ["python", "app.py"]

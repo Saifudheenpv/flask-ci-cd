@@ -5,17 +5,50 @@
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-8">
-        <div class="card border-danger">
-            <div class="card-body text-center">
-                <h2 class="card-title mb-4">
-                    <i class="fas fa-exclamation-triangle text-danger fa-3x"></i>
-                </h2>
-                <h3 class="text-danger mb-4">Error {{ status }}</h3>
-                <p class="lead">{{ error }}</p>
+        <div class="card error-card fade-in">
+            <div class="card-body text-center py-5">
+                <div class="error-icon mb-4">
+                    {% if status == 404 %}
+                        <i class="fas fa-exclamation-circle text-warning fa-5x"></i>
+                    {% else %}
+                        <i class="fas fa-exclamation-triangle text-danger fa-5x"></i>
+                    {% endif %}
+                </div>
+                <h1 class="display-4 mb-4">Error {{ status }}</h1>
+                <p class="lead mb-4">{{ error }}</p>
                 <div class="mt-4">
-                    <a href="/" class="btn btn-primary">
-                        <i class="fas fa-home"></i> Return to Home
+                    <a href="/" class="btn btn-primary btn-lg">
+                        <i class="fas fa-home"></i> Go Home
                     </a>
+                    <button onclick="history.back()" class="btn btn-outline-secondary btn-lg ms-2">
+                        <i class="fas fa-arrow-left"></i> Go Back
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help Section -->
+        <div class="card mt-4 fade-in" style="animation-delay: 0.2s;">
+            <div class="card-body">
+                <h4 class="card-title text-center mb-4">
+                    <i class="fas fa-question-circle text-primary"></i> Need Help?
+                </h4>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <a href="/health" class="btn btn-outline-primary btn-lg mb-3 w-100">
+                            <i class="fas fa-heartbeat"></i> Check Health
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="/api/health" class="btn btn-outline-success btn-lg mb-3 w-100">
+                            <i class="fas fa-code"></i> API Status
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="https://github.com/Saifudheenpv/flask-ci-cd/issues" class="btn btn-outline-dark btn-lg mb-3 w-100">
+                            <i class="fab fa-github"></i> Report Issue
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

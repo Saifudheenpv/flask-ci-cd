@@ -4,49 +4,80 @@
 
 {% block content %}
 <div class="row justify-content-center">
-    <div class="col-md-8">
-        <div class="card status-card">
-            <div class="card-body">
-                <h2 class="card-title text-center mb-4">
+    <div class="col-md-10">
+        <!-- Hero Section -->
+        <div class="card status-card fade-in">
+            <div class="card-body text-center py-5">
+                <h1 class="display-4 mb-4">
                     <i class="fas fa-code text-primary"></i> Welcome to Flask CI/CD Demo
-                </h2>
-                <div class="text-center mb-4">
-                    <p class="lead">{{ message }}</p>
-                    <p class="text-muted">
-                        <i class="fas fa-clock"></i> Last updated: 
-                        <span class="timestamp">{{ timestamp }}</span>
-                    </p>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-md-6">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-check-circle text-success"></i> Features
-                                </h5>
-                                <ul class="list-unstyled">
-                                    <li><i class="fas fa-check text-success"></i> Flask Web Application</li>
-                                    <li><i class="fas fa-check text-success"></i> Docker Containerization</li>
-                                    <li><i class="fas fa-check text-success"></i> CI/CD Pipeline</li>
-                                    <li><i class="fas fa-check text-success"></i> Automated Testing</li>
-                                </ul>
-                            </div>
-                        </div>
+                </h1>
+                <p class="lead mb-4">{{ message }}</p>
+                <p class="text-muted">
+                    <i class="fas fa-clock"></i> Last updated: 
+                    <span class="timestamp">{{ timestamp }}</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card mb-4 fade-in" style="animation-delay: 0.2s;">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <i class="fas fa-check-circle text-success"></i> Features
+                        </h3>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-check text-success"></i> Modern Flask Web Application</li>
+                            <li><i class="fas fa-check text-success"></i> Docker Containerization</li>
+                            <li><i class="fas fa-check text-success"></i> CI/CD Pipeline with GitHub Actions</li>
+                            <li><i class="fas fa-check text-success"></i> Automated Testing & Linting</li>
+                            <li><i class="fas fa-check text-success"></i> Responsive Bootstrap Design</li>
+                            <li><i class="fas fa-check text-success"></i> Real-time Health Monitoring</li>
+                        </ul>
                     </div>
-                    <div class="col-md-6">
-                        <div class="card mb-3">
-                            <div class="card-body">
-                                <h5 class="card-title">
-                                    <i class="fas fa-tools text-primary"></i> Technologies
-                                </h5>
-                                <ul class="list-unstyled">
-                                    <li><i class="fab fa-python text-primary"></i> Python/Flask</li>
-                                    <li><i class="fab fa-docker text-primary"></i> Docker</li>
-                                    <li><i class="fab fa-github text-primary"></i> GitHub Actions</li>
-                                    <li><i class="fas fa-code-branch text-primary"></i> CI/CD</li>
-                                </ul>
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card mb-4 fade-in" style="animation-delay: 0.4s;">
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <i class="fas fa-tools text-primary"></i> Technologies
+                        </h3>
+                        <ul class="list-unstyled">
+                            <li><i class="fab fa-python text-primary"></i> Python 3.8</li>
+                            <li><i class="fas fa-flask text-primary"></i> Flask Framework</li>
+                            <li><i class="fab fa-docker text-primary"></i> Docker</li>
+                            <li><i class="fab fa-github text-primary"></i> GitHub Actions</li>
+                            <li><i class="fab fa-bootstrap text-primary"></i> Bootstrap 5</li>
+                            <li><i class="fab fa-font-awesome text-primary"></i> Font Awesome</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="card fade-in" style="animation-delay: 0.6s;">
+            <div class="card-body">
+                <h3 class="card-title text-center mb-4">
+                    <i class="fas fa-link text-primary"></i> Quick Links
+                </h3>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <a href="/health" class="btn btn-outline-primary btn-lg mb-3 w-100">
+                            <i class="fas fa-heartbeat"></i> Health Check
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="/api/health" class="btn btn-outline-success btn-lg mb-3 w-100">
+                            <i class="fas fa-code"></i> API Status
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="https://github.com/Saifudheenpv/flask-ci-cd" class="btn btn-outline-dark btn-lg mb-3 w-100">
+                            <i class="fab fa-github"></i> GitHub Repo
+                        </a>
                     </div>
                 </div>
             </div>
