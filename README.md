@@ -9,18 +9,22 @@ A modern Flask web application with CI/CD pipeline and Docker containerization.
   - Health check endpoints
   - Error handling
   - Logging system
+  - Static file serving
+  - Template rendering
 
 - **CI/CD Pipeline**
   - Automated testing
   - Code linting (Flake8)
   - Docker image building
   - GitHub Actions workflow
+  - Code quality checks
 
 - **Docker Integration**
   - Containerized application
   - Multi-stage builds
   - Production-ready configuration
   - Easy deployment
+  - Port mapping (5001)
 
 ## 📋 Prerequisites
 
@@ -49,7 +53,7 @@ A modern Flask web application with CI/CD pipeline and Docker containerization.
    ```bash
    python app.py
    ```
-   Visit: http://localhost:5001
+   Visit: http://localhost:5001 or http://127.0.0.1:5001
 
 4. **Run with Docker**
    ```bash
@@ -91,8 +95,9 @@ The project uses GitHub Actions for continuous integration and deployment:
 1. **Build and Test**
    - Runs on every push
    - Executes unit tests
-   - Performs code linting
+   - Performs code linting (Flake8)
    - Checks code style
+   - Validates Python syntax
 
 2. **Docker Build and Push**
    - Triggers on main branch
@@ -124,9 +129,10 @@ The project uses GitHub Actions for continuous integration and deployment:
 
 ## 🌐 Available Endpoints
 
-- `GET /`: Homepage
-- `GET /health`: Health check page
-- `GET /api/health`: Health check API (JSON)
+- `GET /`: Homepage with welcome message
+- `GET /health`: Health check page with status
+- `GET /api/health`: Health check API (JSON response)
+- Error handlers for 404 and 500 status codes
 
 ## 🔧 Development
 
@@ -147,12 +153,16 @@ The project uses GitHub Actions for continuous integration and deployment:
 
 ## 📝 Latest Updates
 
-- Added Docker containerization
-- Enhanced CI/CD pipeline
+- Fixed Flake8 code style issues
+- Improved Flask app initialization
+- Enhanced static file serving
+- Added comprehensive logging
+- Updated Docker configuration
 - Improved error handling
 - Added health check endpoints
 - Modernized UI with Bootstrap
-- Added comprehensive logging
+- Added CI/CD pipeline
+- Updated documentation
 
 ## 🤝 Contributing
 
@@ -175,3 +185,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 - Flask Documentation
 - Docker Documentation
 - GitHub Actions Documentation
+- Bootstrap Documentation
