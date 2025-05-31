@@ -1,135 +1,177 @@
-# Flask CI/CD and Docker Project 🚀
+# Flask CI/CD with Docker Project
 
-[![CI/CD](https://github.com/Saifudheenpv/flask-ci-cd/actions/workflows/ci.yml/badge.svg)](https://github.com/Saifudheenpv/flask-ci-cd/actions)
-[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=flat&logo=docker&logoColor=white)](https://www.docker.com/)
-[![Flask](https://img.shields.io/badge/flask-%23000.svg?style=flat&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
+A modern Flask web application with CI/CD pipeline and Docker containerization.
 
-A modern Flask web application showcasing CI/CD implementation using GitHub Actions and Docker containerization. This project demonstrates industry best practices for automated testing, linting, and containerization.
+## 🚀 Features
 
-## ✨ Features
+- **Flask Web Application**
+  - Modern Bootstrap UI
+  - Health check endpoints
+  - Error handling
+  - Logging system
 
-- 🌐 Flask web application with RESTful endpoints
-- 🧪 Comprehensive unit testing suite using pytest
-- 📝 Code quality enforcement with Flake8
-- 🔄 Automated CI/CD pipeline using GitHub Actions
-- 🐳 Docker containerization for consistent deployments
-- 🚀 Automated Docker image publishing to Docker Hub
+- **CI/CD Pipeline**
+  - Automated testing
+  - Code linting (Flake8)
+  - Docker image building
+  - GitHub Actions workflow
 
-## 🛠️ Prerequisites
+- **Docker Integration**
+  - Containerized application
+  - Multi-stage builds
+  - Production-ready configuration
+  - Easy deployment
 
-- Python 3.8 or higher
-- Git
+## 📋 Prerequisites
+
+- Python 3.8+
 - Docker Desktop
+- Git
 - GitHub account
 - Docker Hub account
 
-## 🚀 Getting Started
-
-### Local Development Setup
+## 🛠️ Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/your-username/flask-ci-cd.git
+   git clone https://github.com/yourusername/flask-ci-cd.git
    cd flask-ci-cd
    ```
 
-2. **Set up virtual environment**
+2. **Set up Python environment**
    ```bash
    python -m venv venv
-   
-   # On Windows
-   venv\Scripts\activate
-   
-   # On macOS/Linux
-   source venv/bin/activate
-   ```
-
-3. **Install dependencies**
-   ```bash
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
    pip install -r requirements.txt
    ```
 
-4. **Run the application**
+3. **Run locally**
    ```bash
    python app.py
    ```
-   Visit http://127.0.0.1:5001/ in your browser
+   Visit: http://localhost:5001
 
-5. **Run tests**
+4. **Run with Docker**
    ```bash
-   pytest
+   # Build the image
+   docker build -t flask-app:latest .
+
+   # Run the container
+   docker run -d -p 5001:5001 --name flask-container flask-app:latest
    ```
 
-6. **Run linting**
-   ```bash
-   flake8 app.py test_app.py
-   ```
-
-### 🐳 Docker Setup
-
-1. **Build the image**
-   ```bash
-   docker build -t flask-app .
-   ```
-
-2. **Run the container**
-   ```bash
-   docker run -p 5001:5001 flask-app
-   ```
-
-3. **Pull from Docker Hub**
-   ```bash
-   docker pull yourusername/flask-app:latest
-   ```
-
-## 🔄 CI/CD Pipeline
-
-Our GitHub Actions workflow automatically:
-
-- ✅ Sets up Python 3.8
-- 📦 Installs project dependencies
-- 🔍 Runs code quality checks with Flake8
-- 🧪 Executes unit tests with pytest
-- 🐳 Builds and pushes Docker image (on successful merge to main)
-
-## 🏗️ Project Structure
+## 📁 Project Structure
 
 ```
 flask-ci-cd/
 ├── .github/
 │   └── workflows/
-│       └── ci.yml
-├── app.py
-├── test_app.py
-├── requirements.txt
-├── Dockerfile
-└── .dockerignore
+│       └── ci.yml           # CI/CD pipeline configuration
+├── static/
+│   ├── css/
+│   │   └── style.css       # Custom styles
+│   └── js/
+│       └── main.js         # Frontend JavaScript
+├── templates/
+│   ├── base.html          # Base template
+│   ├── index.html         # Homepage
+│   ├── health.html        # Health check page
+│   └── error.html         # Error pages
+├── app.py                 # Main Flask application
+├── test_app.py           # Unit tests
+├── requirements.txt      # Python dependencies
+├── Dockerfile           # Docker configuration
+└── README.md           # Project documentation
 ```
 
-## 💡 Lessons Learned
+## 🔄 CI/CD Pipeline
 
-- Implementing GitHub Actions for Python projects
-- Managing virtual environments across different platforms
-- Writing clean, Flake8-compliant code
-- Docker containerization best practices
-- Cross-platform compatibility considerations
+The project uses GitHub Actions for continuous integration and deployment:
 
-## 🚀 Future Enhancements
+1. **Build and Test**
+   - Runs on every push
+   - Executes unit tests
+   - Performs code linting
+   - Checks code style
 
-- [ ] Additional API endpoints and features
-- [ ] Automated deployment to cloud platforms (AWS/Heroku)
-- [ ] Docker Compose implementation for microservices
-- [ ] Code coverage reporting with Coveralls
-- [ ] API documentation with Swagger/OpenAPI
+2. **Docker Build and Push**
+   - Triggers on main branch
+   - Builds Docker image
+   - Pushes to Docker Hub
+   - Tags with commit hash
 
-## 👤 Author
+## 🐳 Docker Usage
 
-[Saifudheenpv](https://github.com/Saifudheenpv)
+1. **Build Image**
+   ```bash
+   docker build -t flask-app:latest .
+   ```
+
+2. **Run Container**
+   ```bash
+   docker run -d -p 5001:5001 --name flask-container flask-app:latest
+   ```
+
+3. **View Logs**
+   ```bash
+   docker logs flask-container
+   ```
+
+4. **Stop Container**
+   ```bash
+   docker stop flask-container
+   ```
+
+## 🌐 Available Endpoints
+
+- `GET /`: Homepage
+- `GET /health`: Health check page
+- `GET /api/health`: Health check API (JSON)
+
+## 🔧 Development
+
+1. **Local Development**
+   ```bash
+   python app.py
+   ```
+
+2. **Run Tests**
+   ```bash
+   python -m pytest
+   ```
+
+3. **Code Linting**
+   ```bash
+   flake8 .
+   ```
+
+## 📝 Latest Updates
+
+- Added Docker containerization
+- Enhanced CI/CD pipeline
+- Improved error handling
+- Added health check endpoints
+- Modernized UI with Bootstrap
+- Added comprehensive logging
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
----
-⭐ Found this project helpful? Please consider giving it a star!
+## 👥 Authors
+
+- Your Name - Initial work
+
+## 🙏 Acknowledgments
+
+- Flask Documentation
+- Docker Documentation
+- GitHub Actions Documentation
