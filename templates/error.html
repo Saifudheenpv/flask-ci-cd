@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Error {{ status }} - Flask CI/CD Demo{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card border-danger">
+            <div class="card-body text-center">
+                <h2 class="card-title mb-4">
+                    <i class="fas fa-exclamation-triangle text-danger fa-3x"></i>
+                </h2>
+                <h3 class="text-danger mb-4">Error {{ status }}</h3>
+                <p class="lead">{{ error }}</p>
+                <div class="mt-4">
+                    <a href="/" class="btn btn-primary">
+                        <i class="fas fa-home"></i> Return to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

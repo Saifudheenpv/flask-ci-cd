@@ -1,0 +1,50 @@
+/* Custom styles */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar-brand i {
+    margin-right: 8px;
+}
+
+.card {
+    transition: transform 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.status-card {
+    border-left: 4px solid #0d6efd;
+}
+
+.health-card {
+    border-left: 4px solid #198754;
+}
+
+.footer {
+    margin-top: auto;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Animation for status indicators */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.status-indicator {
+    animation: pulse 2s infinite;
+} 

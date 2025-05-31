@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block title %}Health Check - Flask CI/CD Demo{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card health-card">
+            <div class="card-body">
+                <h2 class="card-title text-center mb-4">
+                    <i class="fas fa-heartbeat text-success"></i> System Health
+                </h2>
+                <div class="text-center mb-4">
+                    <div class="status-indicator">
+                        <i class="fas fa-circle text-success fa-3x"></i>
+                    </div>
+                    <h3 class="mt-3 text-success">{{ status|title }}</h3>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fas fa-info-circle text-primary"></i> System Info
+                                </h5>
+                                <ul class="list-unstyled">
+                                    <li><strong>Version:</strong> {{ version }}</li>
+                                    <li><strong>Status:</strong> {{ status|title }}</li>
+                                    <li><strong>Last Check:</strong> <span class="timestamp">{{ timestamp }}</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h5 class="card-title">
+                                    <i class="fas fa-chart-line text-primary"></i> API Endpoints
+                                </h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-link text-primary"></i> <a href="/api/health">/api/health</a></li>
+                                    <li><i class="fas fa-link text-primary"></i> <a href="/">/</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
